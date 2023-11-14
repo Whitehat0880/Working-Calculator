@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="calculator1.css">
+</head>
+<body>
+    <h1>Basic Calculator</h1>
+    <table id="result">
+        <input type="text" id="result" style="width: 370px; height: 70px; background-color: #0b7cee; color:rgb(17, 16, 16)e;"><br>
+        <input type="button" onclick="clearDisplay()" value="C" style="background-color:#cc0000" >
+        <br>
+        <input type="button" onclick="addToDisplay(1)" value="1">
+        <input type="button" onclick="addToDisplay(2)" value="2">
+        <input type="button" onclick="addToDisplay(3)" value="3">
+        <input type="button" onclick="addToDisplay('+')" value="+" style=" background-color: #f10b32;"><br>
+
+        <input type="button" onclick="addToDisplay(4)" value="4">
+        <input type="button" onclick="addToDisplay(5)" value="5">
+        <input type="button" onclick="addToDisplay(6)" value="6">
+        <input type="button" onclick="addToDisplay('-')" value="-" style="background-color: #68777a;"><br>
+
+        <input type="button" onclick="addToDisplay(7)" value="7">
+        <input type="button" onclick="addToDisplay(8)" value="8">
+        <input type="button" onclick="addToDisplay(9)" value="9">
+        <input type="button" onclick="addToDisplay('*')"value="*" value="*" style="background-color: #12e5e9;"><br>
+
+        <input type="button" onclick="addToDisplay(0)" value="0">
+        <input type="button" onclick="addToDisplay('.')" value=".">
+        <input type="button" onclick="calculate()" value="=">
+        <input type="button" onclick="addToDisplay('/')" value="/" style="background-color: #f07909;"><br>
+    </table>
+
+    <script>
+        let display = document.getElementById('result');
+
+        function clearDisplay() {
+            display.value = '0';
+        }
+
+        function addToDisplay(value) {
+            if (display.value === '0') {
+            display.value = value;
+            } 
+            else {
+            display.value = display.value + value;
+            }
+}
+
+        function calculate() {
+            try {
+            display.value = eval(display.value);
+            } 
+            catch (error) {
+            display.value = 'Error';
+            }
+}
+
+    </script>
+</body>
+</html>
